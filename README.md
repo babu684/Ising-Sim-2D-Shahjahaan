@@ -11,3 +11,4 @@ If you just want to see the simulation run without downloading tools or compilin
 3. Extract the contents completely.
 4. Double-click `IsingApp.exe` to launch.
 
+If this doesn't work then you can simply download the whole folder from github and extract the executable(It also has all the .dll files to go along with it).
