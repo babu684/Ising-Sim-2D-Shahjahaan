@@ -16,4 +16,4 @@ If this doesn't work then you can simply download the whole folder from github a
 ## Update 1 :
 
 I have added a simple testing tool which plots the Ising sim results over multiple temps and exports it out into a .csv file which can be used anywhere.
-It saves the Heat Capacity and Average Energy. Hope this is nice. <3
+It saves the Heat Capacity and Average Energy. It is a headless file (Without GUI) named multi_temp_Ising.cpp. Hope this is nice. <3
