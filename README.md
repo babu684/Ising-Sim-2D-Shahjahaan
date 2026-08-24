@@ -12,3 +12,8 @@ If you just want to see the simulation run without downloading tools or compilin
 4. Double-click `IsingApp.exe` to launch.
 
 If this doesn't work then you can simply download the whole folder from github and extract the executable(It also has all the .dll files to go along with it).
+
+## Update 1 :
+
+I have added a simple testing tool which plots the Ising sim results over multiple temps and exports it out into a .csv file which can be used anywhere.
+It saves the Heat Capacity and Average Energy. Hope this is nice. <3
