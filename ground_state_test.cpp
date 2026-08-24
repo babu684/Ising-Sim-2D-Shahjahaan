@@ -10,7 +10,7 @@
 int grid_size; 
 float temp;
 float target_temp;
-float temp_step;
+int num_temp_step;
 int iterations;
 int iterations_per_frame;
 int current_iterations = 0;
@@ -87,8 +87,11 @@ float FLIPRAND(std::vector<std::vector<int>>& grid, std::mt19937& gen)
 int main()
 {
     std::mt19937 gen(static_cast<unsigned int>(time(nullptr)));
-    std::cout << "Enter the Grid Size, Temperature (in epsilon/k), and Total sweeps, Target Temperature and Temperature step: ";
-    std::cin >> grid_size >> temp >> iterations >> target_temp >> temp_step;
+    std::cout << "Enter the Grid Size, Temperature (in epsilon/k), and Total sweeps, Target Temperature and No. of Temperature step: ";
+    std::cin >> grid_size >> temp >> iterations >> target_temp >> num_temp_step;
+
+    double temp_step = (target_temp - temp) / num_temp_step;
+
     if(grid_size <= 0 || temp <= 0 || iterations <= 0)
     {
         std::cout << "Bruh input valid values, all 3 inputs cannot be less than or equal to 0.";
@@ -102,11 +105,10 @@ int main()
     float energy = CALC__ENERGY(grid);
     const int window_dim = 800;
 
-    // 2. Open the CSV file and write the column headers
     std::ofstream csv_file("ising_data.csv");
     csv_file << "Temperature,Avg_Energy,Heat_Capacity\n";
     
-    while (temp < target_temp)
+    for(int steps_taken = 0; steps_taken <= num_temp_step; steps_taken++)
     {
         results_printed = false;
         energy_sum = 0;
